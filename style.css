@@ -1,27 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: #f0f0f0;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.7;
+    overflow-x: hidden;
 }
 
 .cntnr {
     width: 90%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .hdr {
-    background-color: #222222;
+    background-color: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(10px);
     padding: 1rem 0;
-    border-bottom: 2px solid #7F00FF;
+    border-bottom: 1px solid #2a2a2a;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
 .hdr .cntnr {
@@ -31,163 +36,260 @@ body {
 }
 
 .logo {
-    font-size: 1.8rem;
-    color: #7F00FF;
+    font-size: 2rem;
+    color: #8A2BE2; /* BlueViolet */
     margin: 0;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: -1px;
 }
 
 .nav {
     display: flex;
-    gap: 1rem;
+    gap: 1.2rem;
 }
 
 .n-lnk {
-    color: #f0f0f0;
+    color: #c0c0c0;
     text-decoration: none;
     font-size: 1rem;
-    padding: 0.5rem 0.8rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 400;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.n-lnk::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #8A2BE2;
+    transition: width 0.3s ease;
 }
 
 .n-lnk:hover {
-    background-color: #7F00FF;
     color: #ffffff;
+}
+
+.n-lnk:hover::after {
+    width: 100%;
 }
 
 .hro {
-    background-color: #2c2c2c;
+    position: relative;
+    background: linear-gradient(45deg, #1a001a, #2a002a);
     color: #ffffff;
-    padding: 120px 0 80px;
+    padding: 160px 0 100px;
     text-align: center;
-    margin-top: 60px; /* Adjust based on header height */
+    margin-top: 70px; /* Header height */
+    overflow: hidden;
+}
+
+.hro-ovrly {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(40, 0, 60, 0.1) 0%, rgba(18,18,18,0.8) 70%, #121212 100%);
+    z-index: 1;
+}
+
+.hro-cnt {
+    position: relative;
+    z-index: 2;
 }
 
 .h-ttl {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    color: #7F00FF;
+    font-size: 3.8rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
 }
 
 .h-subtl {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
-    color: #cccccc;
+    color: #e0e0e0;
+    font-weight: 300;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.h-info {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #bbbbbb;
+.h-inf {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: #b0a0c0;
+    font-weight: 400;
 }
 
 .btn {
     display: inline-block;
-    padding: 0.8rem 1.8rem;
+    padding: 0.9rem 2rem;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
     border: none;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
 }
 
 .btn-prpl {
-    background-color: #7F00FF;
+    background-color: #8A2BE2;
     color: #ffffff;
 }
 
 .btn-prpl:hover {
-    background-color: #6A0DAD;
-    transform: translateY(-2px);
+    background-color: #7B24CB;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
 }
 
 .btn-grn {
-    background-color: #5cb85c;
+    background-color: #663399; /* Rebeccapurple */
     color: #ffffff;
+    border: 2px solid #8A2BE2;
 }
 
 .btn-grn:hover {
-    background-color: #4cae4c;
-    transform: translateY(-2px);
+    background-color: #8A2BE2;
+    border-color: #8A2BE2;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 51, 153, 0.5);
 }
 
 .s-ttl {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 2.5rem;
-    color: #7F00FF;
+    margin-bottom: 3.5rem;
+    font-weight: 700;
+    color: #8A2BE2;
+    position: relative;
+}
+
+.s-ttl::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #8A2BE2;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
 }
 
 .ftrs {
-    padding: 60px 0;
-    background-color: #1a1a1a;
+    padding: 80px 0;
+    background-color: #181818;
 }
 
-.ftr-lst {
-    list-style: none;
-    padding: 0;
+.ftr-grd {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
-.ftr-itm {
-    background-color: #2c2c2c;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #7F00FF;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.ftr-crd {
+    background-color: #212121;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #2f2f2f;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    text-align: center;
 }
 
-.ftr-itm:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(127, 0, 255, 0.3);
+.ftr-crd:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 35px rgba(138, 43, 226, 0.2);
+    border-color: #8A2BE2;
+}
+
+.crd-icon {
+    font-size: 2.5rem;
+    color: #8A2BE2;
+    margin-bottom: 1rem;
+}
+
+.crd-ttl {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin-bottom: 0.75rem;
+}
+
+.crd-txt {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+    line-height: 1.6;
 }
 
 .cta {
-    padding: 60px 0;
-    background-color: #2c2c2c;
+    padding: 80px 0;
+    background: linear-gradient(rgba(18,18,18,0.9), rgba(18,18,18,0.9)), url('https://sjc.microlink.io/hZhMWvq9WWsIB1Ax6d_6ornADhl2YDB4sIEtO_WizHiaaUYx2Fzn786iMPTWT67hBGvFTsVmjJbdAXaHqkoMhQ.jpeg') no-repeat center center;
+    background-size: cover; /* Using the provided image as a subtle background */
+    background-attachment: fixed; /* Parallax effect */
     text-align: center;
 }
 
-.cta p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    color: #cccccc;
+.cta-txt {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: #e0e0e0;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .ftr {
-    background-color: #222222;
-    color: #aaaaaa;
+    background-color: #0d0d0d;
+    color: #777777;
     text-align: center;
-    padding: 2rem 0;
-    border-top: 1px solid #333333;
+    padding: 2.5rem 0;
+    border-top: 1px solid #222222;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+    .h-ttl { font-size: 3rem; }
+    .h-subtl { font-size: 1.4rem; }
+    .s-ttl { font-size: 2.2rem; }
 }
 
 @media (max-width: 768px) {
     .hdr .cntnr {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.8rem;
     }
     .nav {
         margin-top: 0.5rem;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 0.8rem;
     }
-    .h-ttl {
-        font-size: 2.5rem;
-    }
-    .h-subtl {
-        font-size: 1.2rem;
-    }
-    .s-ttl {
-        font-size: 1.8rem;
-    }
-    .ftr-lst {
-        grid-template-columns: 1fr;
-    }
+    .n-lnk { font-size: 0.95rem; }
+    .hro { padding: 120px 0 80px; }
+    .h-ttl { font-size: 2.5rem; }
+    .h-subtl { font-size: 1.2rem; }
+    .s-ttl { font-size: 2rem; }
+    .ftr-grd { grid-template-columns: 1fr; }
+    .btn-lg { padding: 0.9rem 2rem; font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+    .h-ttl { font-size: 2.2rem; }
+    .h-subtl { font-size: 1.1rem; }
+    .s-ttl { font-size: 1.8rem; }
+    .crd-ttl { font-size: 1.2rem; }
+    .crd-txt { font-size: 0.9rem; }
 }
