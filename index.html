@@ -20,14 +20,27 @@
     body {
       font-family: 'Inter', sans-serif;
       background-color: #09090b; 
-      background-image: radial-gradient(ellipse at 0% 0%, rgba(50, 80, 150, 0.1) 0%, transparent 70%), radial-gradient(ellipse at 100% 100%, rgba(100, 50, 150, 0.08) 0%, transparent 70%);
+      background-image: 
+        linear-gradient(170deg, rgba(12,12,15,1) 0%, rgba(18,18,24,1) 25%, #09090b 60%),
+        radial-gradient(ellipse at 10% 15%, rgba(60, 70, 160, 0.09) 0%, transparent 60%), 
+        radial-gradient(ellipse at 90% 85%, rgba(100, 60, 150, 0.07) 0%, transparent 60%);
       background-repeat: no-repeat;
       background-attachment: fixed;
     }
-    .grad-txt { background: linear-gradient(to right, #dfe9f3 0%, #ffffff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .grad-txt { 
+      background: linear-gradient(to right, #dfe9f3 0%, #ffffff 100%); 
+      -webkit-background-clip: text; 
+      background-clip: text; 
+      color: transparent; 
+    }
     
-    .nav-lnk:hover { background-color: rgba(255,255,255,0.05); }
-    .btn-hvr:hover { border-color: #fff; background-color: rgba(255,255,255,0.05); }
+    .nav-lnk:hover { 
+      background-color: rgba(255,255,255,0.05); 
+    }
+    .btn-hvr:hover { 
+      border-color: #fff; 
+      background-color: rgba(255,255,255,0.05); 
+    }
     
     ::-webkit-scrollbar {
       width: 8px;
@@ -67,7 +80,7 @@
       margin-bottom: 1rem;
     }
     
-    .ft-card {
+    .ft-card { 
       background: rgba(255, 255, 255, 0.03); 
       backdrop-filter: blur(12px) saturate(150%);
       border: 1px solid rgba(255, 255, 255, 0.1); 
