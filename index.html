@@ -168,6 +168,172 @@
       color: #d4d4d8; 
     }
 
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.03); 
+      backdrop-filter: blur(12px) saturate(150%);
+      border: 1px solid rgba(255, 255, 255, 0.1); 
+      border-radius: 1rem; 
+      padding: 2.5rem 2rem; 
+      text-align: center;
+      position: relative;
+      overflow: hidden; 
+      transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  box-shadow 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  border-color 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  background 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(255, 255, 255, 0.25); 
+      background: rgba(255, 255, 255, 0.05); 
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .pricing-card.featured {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .pricing-card.featured:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .pricing-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-icon-container {
+      width: 4.5rem; 
+      height: 4.5rem; 
+      background: linear-gradient(145deg, rgba(50, 50, 60, 0.5), rgba(30, 30, 35, 0.5)); 
+      border-radius: 0.875rem; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem auto; 
+      border: 1px solid rgba(255, 255, 255, 0.08); 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+      transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .pricing-card:hover .pricing-icon-container {
+      transform: scale(1.08);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    .pricing-icon-container svg {
+      width: 2.25rem; 
+      height: 2.25rem; 
+      color: #a1a1aa; 
+      transition: color 0.3s ease;
+    }
+
+    .pricing-card:hover .pricing-icon-container svg {
+      color: #ffffff;
+    }
+
+    .pricing-card h3 {
+      color: #f4f4f5; 
+      font-size: 1.25rem; 
+      font-weight: 700; 
+      margin-bottom: 0.625rem; 
+      transition: color 0.3s ease;
+      transform: translateZ(0); 
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .pricing-card:hover h3 {
+      color: #ffffff;
+    }
+
+    .pricing-card .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.25rem;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card .duration {
+      color: #a1a1aa; 
+      font-size: 0.9rem; 
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+      transition: color 0.3s ease;
+      transform: translateZ(0); 
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .pricing-card:hover .duration {
+      color: #d4d4d8; 
+    }
+
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .pricing-features li {
+      color: #a1a1aa; 
+      font-size: 0.9rem; 
+      line-height: 1.65;
+      padding: 0.625rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      transition: color 0.3s ease;
+      transform: translateZ(0); 
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .pricing-card:hover .pricing-features li {
+      color: #d4d4d8; 
+    }
+
+    .pricing-features li svg {
+      width: 1.125rem;
+      height: 1.125rem;
+      color: #a1a1aa;
+      flex-shrink: 0;
+      transition: color 0.3s ease;
+    }
+    
+    .pricing-card:hover .pricing-features li svg {
+      color: #d4d4d8;
+    }
+
+    .pricing-button {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 0.875rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: auto;
+    }
+
+    .pricing-button:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
     .faq-itm {
       background-color: rgba(39, 39, 42, 0.3); 
       border-radius: 0.75rem; 
@@ -240,6 +406,10 @@
           FEATURES
           <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-white transition-all duration-300 ease-out group-hover:w-full group-hover:left-0 opacity-0 group-hover:opacity-100"></span>
         </a>
+        <a href="#pricing" class="nav-lnk text-zinc-400 font-semibold text-sm transition duration-300 relative group hover:text-white px-3 py-2 rounded-md">
+          PRICING
+          <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-white transition-all duration-300 ease-out group-hover:w-full group-hover:left-0 opacity-0 group-hover:opacity-100"></span>
+        </a>
         <a href="#faq" class="nav-lnk text-zinc-400 font-semibold text-sm transition duration-300 relative group hover:text-white px-3 py-2 rounded-md">
           FAQ
           <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-white transition-all duration-300 ease-out group-hover:w-full group-hover:left-0 opacity-0 group-hover:opacity-100"></span>
@@ -279,6 +449,7 @@
       <nav class="flex flex-col space-y-6 p-6">
         <a href="#home" class="text-zinc-400 font-semibold text-sm hover:text-white transition-colors duration-200">HOME</a>
         <a href="#features" class="text-zinc-400 font-semibold text-sm hover:text-white transition-colors duration-200">FEATURES</a>
+        <a href="#pricing" class="text-zinc-400 font-semibold text-sm hover:text-white transition-colors duration-200">PRICING</a>
         <a href="#faq" class="text-zinc-400 font-semibold text-sm hover:text-white transition-colors duration-200">FAQ</a>
         <a href="https://discord.gg/vTpT9Hn9" class="text-zinc-400 font-semibold text-sm hover:text-white transition-colors duration-200">DISCORD</a>
         <a href="/download/vitual-latest.zip" class="mt-2 bg-white/10 hover:bg-white/15 text-white px-4 py-2 rounded-lg font-semibold border border-white/20 hover:border-white/30 transition duration-200 flex items-center justify-center gap-2 text-sm">
@@ -412,6 +583,163 @@
       </div>
     </section>
 
+    <section id="pricing" class="py-24 relative overflow-hidden border-t border-zinc-800/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <span class="ft-badge">FLEXIBLE PLANS</span>
+        <h2 class="text-4xl md:text-5xl font-bold mb-5 bg-gradient-to-br from-zinc-100 via-zinc-300 to-blue-300 bg-clip-text text-transparent">
+          Choose Your Plan
+        </h2>
+        <p class="text-zinc-400 max-w-2xl mx-auto mb-20 text-lg leading-relaxed">
+          Select the perfect subscription tier that matches your needs. All plans include full access to our premium executor.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Weekly Plan -->
+          <div class="pricing-card">
+            <div class="pricing-icon-container">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+              </svg>
+            </div>
+            <h3>Weekly</h3>
+            <div class="price">$5.5</div>
+            <div class="duration">7 days access</div>
+            <ul class="pricing-features">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                Full UNC & SUNC Support
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                Optimized Performance
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                Regular Updates
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                24/7 Support
+              </li>
+            </ul>
+            <button class="pricing-button">Get Started</button>
+          </div>
+
+          <!-- Monthly Plan (Featured) -->
+          <div class="pricing-card featured">
+            <div class="pricing-icon-container">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 22l-.394-1.433a2.25 2.25 0 00-1.423-1.423L13.25 19l1.433-.394a2.25 2.25 0 001.423-1.423L16.5 16l.394 1.433a2.25 2.25 0 001.423 1.423L19.75 19l-1.433.394a2.25 2.25 0 00-1.423 1.423z"/>
+              </svg>
+            </div>
+            <h3>Monthly</h3>
+            <div class="price">$15</div>
+            <div class="duration">30 days access</div>
+            <ul class="pricing-features">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                Full UNC & SUNC Support
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                Optimized Performance
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                Regular Updates
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                24/7 Support
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                Best Value
+              </li>
+            </ul>
+            <button class="pricing-button">Get Started</button>
+          </div>
+
+          <!-- Quarterly Plan -->
+          <div class="pricing-card">
+            <div class="pricing-icon-container">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0"/>
+              </svg>
+            </div>
+            <h3>Quarterly</h3>
+            <div class="price">$35</div>
+            <div class="duration">90 days access</div>
+            <ul class="pricing-features">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                Full UNC & SUNC Support
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                Optimized Performance
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                Regular Updates
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                24/7 Support
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.15"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                Maximum Savings
+              </li>
+            </ul>
+            <button class="pricing-button">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="faq" class="py-24 border-t border-zinc-800/50 relative">
       <div class="absolute inset-0 bg-zinc-900/20"></div>
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(200,220,200,0.025)_0%,_transparent_55%)]"></div>
@@ -508,17 +836,17 @@
         <div class="absolute inset-0 bg-zinc-900/20 border-t border-zinc-800/30"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(200,220,200,0.03)_0%,_transparent_70%)]"></div>
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center relative z-10 gap-4">
-          <div class="flex items-center group">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-3 items-center relative z-10 gap-4 text-center sm:text-left">
+          <div class="flex items-center group justify-center sm:justify-start">
             <div class="mr-2 w-5 h-5 bg-gradient-to-br from-white/10 to-white/5 rounded-full flex items-center justify-center border border-white/10 shadow-lg group-hover:scale-110 transition-transform duration-300">
               <span class="text-red-500 text-xs transform translate-y-px">❤️</span>
             </div>
             <p class="text-zinc-400 text-sm font-medium bg-gradient-to-r from-zinc-300 to-zinc-400 bg-clip-text hover:text-transparent transition-all duration-300">Made with love by <span class="font-semibold">vitual devteam</span></p>
           </div>
           
-          <p class="text-zinc-500 text-xs font-light tracking-wide opacity-80 hover:opacity-100 transition-opacity duration-300">© Copyright 2025 vitual.cc, All rights reserved.</p>
+          <p class="text-zinc-500 text-xs font-light tracking-wide opacity-80 hover:opacity-100 transition-opacity duration-300 text-center">© Copyright 2025 vitual.cc, All rights reserved.</p>
           
-          <a href="https://discord.gg/vTpT9Hn9" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg transition-all duration-300 border border-white/10 hover:border-white/30 group">
+          <a href="https://discord.gg/vTpT9Hn9" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg transition-all duration-300 border border-white/10 hover:border-white/30 group justify-center sm:justify-end mx-auto sm:mx-0 sm:ml-auto">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-zinc-400 group-hover:text-white transition-colors duration-300">
               <path fill="currentColor" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09-.01-.02-.04-.03-.07-.03-1.5.26-2.93.71-4.27 1.33-.01 0-.02.01-.03.02-2.72 4.07-3.47 8.03-3.1 11.95 0 .02.01.04.03.05 1.8 1.32 3.53 2.12 5.24 2.65.03.01.06 0 .07-.02.4-.55.76-1.13 1.07-1.74.02-.04 0-.08-.04-.09-.57-.22-1.11-.48-1.64-.78-.04-.02-.04-.08-.01-.11.11-.08.22-.17.33-.25.02-.02.05-.02.07-.01 3.44 1.57 7.15 1.57 10.55 0 .02-.01.05-.01.07.01.11.09.22.17.33.26.04.03.04.09-.01.11-.52.31-1.07.56-1.64.78-.04.01-.05.06-.04.09.32.61.68 1.19 1.07 1.74.03.02.06.02.09.01 1.72-.53 3.45-1.33 5.25-2.65.02-.01.03-.03.03-.05.44-4.53-.73-8.46-3.1-11.95-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.83 2.12-1.89 2.12z"/>
             </svg>
@@ -575,6 +903,35 @@
                 }
             });
         });
+      </script>
+      <script>
+        // Active section highlighting in navbar
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-lnk[href^="#"]');
+
+        function highlightActiveSection() {
+          const scrollY = window.pageYOffset;
+
+          sections.forEach(section => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 100;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+              navLinks.forEach(link => {
+                link.classList.remove('text-white');
+                link.classList.add('text-zinc-400');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                  link.classList.add('text-white');
+                  link.classList.remove('text-zinc-400');
+                }
+              });
+            }
+          });
+        }
+
+        window.addEventListener('scroll', highlightActiveSection, { passive: true });
+        window.addEventListener('load', highlightActiveSection);
       </script>
       <script>
         const uiImg = document.getElementById('ui-img');
